@@ -65,5 +65,11 @@ public class MovieController {
 		}
 		return movie;
 	}
+	
+	// Custom Queries
+	@GetMapping("/rating/{rating}")
+	public Iterable<Movie> getAllByRating(@PathVariable String rating) {
+		return movieRepo.findAllByRating(rating);
+	}
 
 }
